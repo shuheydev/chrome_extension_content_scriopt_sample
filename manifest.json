@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Sample: Execute After Loaded",
+    "version": "1.0.0.0",
+    "icons": {
+        "128": "icons/icon.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "128": "icons/icon.png"
+        },
+        "default_title": "Sample: Execute After Loaded",
+        "browser_style": true
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*",
+                "file:///*/*"
+            ],
+            "js": [
+                "contentScripts/scripts/jquery.min.js",
+                "contentScripts/scripts/contentScript.js"
+            ],
+            "all_frames": true,
+            "run_at": "document_end"
+        }
+    ]
+}
